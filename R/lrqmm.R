@@ -1,11 +1,4 @@
 lrqmm<-function(id,sire,dam,X,Y,alpha=0,tau=0.5,Factor=FALSE){
-  if(!requireNamespace("GeneticsPed", quietly = TRUE)){stop("Package \"GeneticsPed\" needed for this function to work. Please install it.",call. = FALSE)}
-  if(!requireNamespace("SparseM", quietly = TRUE)){stop("Package \"SparseM\" needed for this function to work. Please install it.",call. = FALSE)}
-  if(!requireNamespace("quantreg", quietly = TRUE)){stop("Package \"quantreg\" needed for this function to work. Please install it.",call. = FALSE)}
-  if(!requireNamespace("Matrix", quietly = TRUE)){stop("Package \"Matrix\" needed for this function to work. Please install it.",call. = FALSE)}
-  if(!requireNamespace("MasterBayes", quietly = TRUE)){stop("Package \"MasterBayes\" needed for this function to work. Please install it.",call. = FALSE)}
-  if(!requireNamespace("MCMCglmm", quietly = TRUE)){stop("Package \"MCMCglmm\" needed for this function to work. Please install it.",call. = FALSE)}
-  if(!requireNamespace("MASS", quietly = TRUE)){stop("Package \"MASS\" needed for this function to work. Please install it.",call. = FALSE)}
 data<-data.frame(id,sire,dam,X,Y) #preparation data befor using Pedigree function
 Ped<-GeneticsPed::Pedigree(x=data,subject="id",ascendant=c("sire","dam"))
 Y=as.matrix(Ped[5]);n<-dim(Y)[1]#preparation response variable
