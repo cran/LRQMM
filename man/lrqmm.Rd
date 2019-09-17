@@ -26,7 +26,7 @@ lrqmm(id, sire, dam, X, Y, alpha = 0 , tau = 0.5 , Factor = FALSE)
 The function computes an estimate on the tau-th quantile effects of the linear mixed model. This is a sparse implementation of the Frisch-Newton algorithm for quantile regression described in Portnoy and Koenker (1997).
 
 we used "GeneticsPed", "Matrix", "MasterBayes", "MCMCglmm", "MASS", "SparseM" and "quantreg" packages in this function. befor using "lrqmm" function be sure from installation this packages.
-"GeneticsPed" available in <https://bioconductor.org/packages/release/bioc/src/contrib/GeneticsPed_1.46.0.tar.gz>. other packages are available in CRAN.
+"GeneticsPed" available in <https://bioconductor.org/packages/release/bioc/src/contrib/GeneticsPed_1.46.0.tar.gz> or orders in <http://bioconductor.org/packages/release/bioc/html/GeneticsPed.html>. other packages are available in CRAN.
 }
 \value{
 \item{Fixed effects}{estimate for fixed effect from linear quantile regression mixed models}
