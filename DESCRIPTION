@@ -1,8 +1,13 @@
 Package: LRQMM
 Type: Package
 Title: Fitting Linear Quantile Regression Mixed Models
-Version: 1.1.10
-Author: Sayyed Reza Alavian, Majid Sarmad, Mehdi Jabbari Nooghabi.(Ferdowsi University Of Mashhad)
+Version: 1.1.11
+Author: Sayyed Reza Alavian[aut,cre]
+        Majid Sarmad[ths]
+        Mehdi Jabbari Nooghabi[ths]
+        Hani Rezaee[ctb]
+        Saeed Zerehdaran[ctb]
+        Ferdowsi University Of Mashhad [cph]
 Maintainer: Sayyed Reza Alavian <s.rezaalavian@mail.um.ac.ir>
 Description: Fit a quantile regression mixed model using a sparse implementation of the
   Frisch-Newton interior-point algorithm as described in 
@@ -11,10 +16,9 @@ License: GPL-2 | GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.5.0)
-biocViews:
 Imports: GeneticsPed, SparseM, MASS, quantreg, Matrix, MasterBayes,
         MCMCglmm
 NeedsCompilation: no
-Packaged: 2019-09-22 07:14:43 UTC; REZA
+Packaged: 2019-11-30 08:11:42 UTC; REZA
 Repository: CRAN
-Date/Publication: 2019-09-23 15:40:12 UTC
+Date/Publication: 2019-11-30 08:40:02 UTC

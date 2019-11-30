@@ -31,16 +31,19 @@ we used "GeneticsPed", "Matrix", "MasterBayes", "MCMCglmm", "MASS", "SparseM" an
 \value{
 \item{Fixed effects}{estimate for fixed effect from linear quantile regression mixed models}
 \item{Random effects}{estimate for random effect from linear quantile regression mixed models}
-\item{summary}{reporting quantile for  effects estimation, number of observations and pedigree's length}
+\item{summary}{reporting quantile for  effects estimation, mean absolute error for fitted model, number of observations and pedigree's length}
 }
 \references{
-[1]Koenker, R. and S. Portnoy (1997) The Gaussian Hare and the Laplacean Tortoise: Computability of Squared-error vs Absolute Error Estimators, (with discussion). Statistical Science, 12, 279-300.
+[1]Alavian, S. R. (2019). Creating LRQMM package for predicting the breeding value of animals
+by corrected mixed quantile regression (Unpublished master's thesis). Ferdowsi University Of Mashhad. Mashhad. Iran.[Persion].
+
+[2]Koenker, R. and S. Portnoy (1997). The Gaussian Hare and the Laplacean Tortoise: Computability of Squared-error vs Absolute Error Estimators, (with discussion). Statistical Science, 12, 279-300.
 <https://www.jstor.org/stable/2246217>
 
-[2]Koenker, R. W. (2005). Quantile Regression, Cambridge U. Press. ISBN: 0521608279.
+[3]Koenker, R. W. (2005). Quantile Regression, Cambridge U. Press. ISBN: 0521608279.
 
 
-[3]Mrode, R. A. (2005). Linear Models for the Prediction of Animal Breeding Values. 3rd edition.
+[4]Mrode, R. A. (2005). Linear Models for the Prediction of Animal Breeding Values. 3rd edition.
 CABI International. ISBN: 9781780643915.
 }
 \author{Sayyed Reza Alavian }
@@ -48,8 +51,14 @@ CABI International. ISBN: 9781780643915.
 
 
 \examples{
-data(Cow)
-with(lrqmm(id,sire,dam,HERD,LACTLENGHT,2,0.5,Factor=TRUE),data=Cow)
+#Start(not run)
+#
+#
+#data(Cow)(run without "#")
+#with(lrqmm(id,sire,dam,HERD,LACTLENGHT,2,0.5,Factor=TRUE),data=Cow)(run without "#")
+#
+#
+#End(not run)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
