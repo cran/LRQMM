@@ -9,15 +9,16 @@ Fit a quantile regression mixed model using a sparse implementation of the
   Frisch-Newton interior-point algorithm.
 }
 \usage{
-lrqmm(id, sire, dam, X, Y, alpha = 0 , tau = 0.5 , Factor = FALSE)
+lrqmm(id, sire, dam, X, Y,cova=NULL , alpha = 0 , tau = 0.5 , Factor = FALSE)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
-  \item{id}{ The number form animal record as vector or column matrix}
-  \item{sire}{The number form father's animal record as vector or column matrix}
-  \item{dam}{The number form mother's animal record as vector or column matrix}
-  \item{X}{a fixed effect as vector or column matrix}
-  \item{Y}{a response vector or column matrix}
+  \item{id}{ The number form animal record as column matrix}
+  \item{sire}{The number form father's animal record as column matrix}
+  \item{dam}{The number form mother's animal record as column matrix}
+  \item{X}{fixed effect(s) as column matrix}
+  \item{Y}{a response column matrix}
+  \item{cova}{{covariate effect(s) column matrix}}
   \item{alpha}{a parameter for raite error's varince to variance of random effects  }
   \item{tau}{desired quantile}
   \item{Factor}{type of fixed effect that "TRUE" as factor variable and "FALSE" as quantitative variable}
@@ -29,9 +30,12 @@ we used "GeneticsPed", "Matrix", "MasterBayes", "MCMCglmm", "MASS", "SparseM" an
 "GeneticsPed" available in <https://bioconductor.org/packages/release/bioc/src/contrib/GeneticsPed_1.46.0.tar.gz> or orders in <http://bioconductor.org/packages/release/bioc/html/GeneticsPed.html>. other packages are available in CRAN.
 }
 \value{
-\item{Fixed effects}{estimate for fixed effect from linear quantile regression mixed models}
-\item{Random effects}{estimate for random effect from linear quantile regression mixed models}
-\item{summary}{reporting quantile for  effects estimation, mean absolute error for fitted model, number of observations and pedigree's length}
+\item{Fixed effects}{estimate for fixed effect(s) from linear quantile regression mixed model}
+\item{cova effects}{estimate for covariate effect(s) from linear quantile regression mixed model}
+\item{Random effects}{estimate for random effect(s) from linear quantile regression mixed model}
+\item{residuals}{estimate for model residuals from linear quantile regression mixed model}
+\item{Time}{execution time of linear quantile regression mixed model}
+\item{summary}{reporting quantile for  effects estimation,  mean absolute error for fitted model,  number of observations and pedigree's length}
 }
 \references{
 [1]Alavian, S. R. (2019). Creating LRQMM package for predicting the breeding value of animals
@@ -52,12 +56,12 @@ CABI International. ISBN: 9781780643915.
 
 \examples{
 #Start(not run)
-#
-#
-#data(Cow)(run without "#")
-#with(lrqmm(id,sire,dam,HERD,LACTLENGHT,2,0.5,Factor=TRUE),data=Cow)(run without "#")
-#
-#
+
+
+data(Cow)
+with(lrqmm(id,sire,dam,HERD,LACTLENGHT,alpha=1,tau=0.5,Factor=TRUE),data=Cow)
+
+
 #End(not run)
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
