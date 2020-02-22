@@ -26,16 +26,23 @@ lrqmm(id, sire, dam, X, Y,cova=NULL , alpha = 0 , tau = 0.5 , Factor = FALSE)
 \details{
 The function computes an estimate on the tau-th quantile effects of the linear mixed model. This is a sparse implementation of the Frisch-Newton algorithm for quantile regression described in Portnoy and Koenker (1997).
 
-we used "GeneticsPed", "Matrix", "MasterBayes", "MCMCglmm", "MASS", "SparseM" and "quantreg" packages in this function. befor using "lrqmm" function be sure from installation this packages.
-"GeneticsPed" available in <https://bioconductor.org/packages/release/bioc/src/contrib/GeneticsPed_1.46.0.tar.gz> or orders in <http://bioconductor.org/packages/release/bioc/html/GeneticsPed.html>. other packages are available in CRAN.
+we used "GeneticsPed", "Matrix", "kinship2", "MCMCglmm", "sparsesvd", "corpcor", "SparseM" and "quantreg" packages in this function. befor using "lrqmm" function be sure from installation this packages.
+
+
+"GeneticsPed" available in
+
+<https://bioconductor.org/packages/release/bioc/src/contrib/GeneticsPed_1.46.0.tar.gz> or
+orders in <http://bioconductor.org/packages/release/bioc/html/GeneticsPed.html>.
+
+other packages are available in CRAN.
 }
 \value{
 \item{Fixed effects}{estimate for fixed effect(s) from linear quantile regression mixed model}
 \item{cova effects}{estimate for covariate effect(s) from linear quantile regression mixed model}
 \item{Random effects}{estimate for random effect(s) from linear quantile regression mixed model}
 \item{residuals}{estimate for model residuals from linear quantile regression mixed model}
-\item{Time}{execution time of linear quantile regression mixed model}
-\item{summary}{reporting quantile for  effects estimation,  mean absolute error for fitted model,  number of observations and pedigree's length}
+\item{Time_between_start_to_end}{execution time of linear quantile regression mixed model}
+\item{summary}{reporting quantile for  effects estimation,  mean absolute error for fitted model,  variance of response variable, variance of pedigree's random.effect, variance of record's random.effect, number of observations, pedigree's length, fix effect lavels and random effect lavels}
 }
 \references{
 [1]Alavian, S. R. (2019). Creating LRQMM package for predicting the breeding value of animals

@@ -1,8 +1,8 @@
-a79dddaee3ba881dca4ac5887807d1e1 *DESCRIPTION
+1e7b4e10ebdb53c1d1a6cd814376ae67 *DESCRIPTION
 30b3de9e4428a1baaef0db3f1f669df6 *NAMESPACE
-33a74eb05d02998cfa83d3ecacad18e0 *R/lrqmm.R
+bbe89f5c07d4f4c0901d7b44ade06891 *R/lrqmm.R
 309a5e7d6c0f52e843bda35c3d260cea *R/spginv.R
 60e7f94732c8d784da47c65b22fb94bc *data/Cow.rda
 3a2073331bfe7b104a40d50a4dcc77de *man/Cow.Rd
-11dec9ab4c6ddb2dc706aedea1fa0ba9 *man/lrqmm.Rd
+b3a8f0a2a855399a94b3ae21f109464e *man/lrqmm.Rd
 c019306b033d77df61dc35f3cba31f38 *man/spginv.Rd

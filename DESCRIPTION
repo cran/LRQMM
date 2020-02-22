@@ -1,7 +1,7 @@
 Package: LRQMM
 Type: Package
 Title: Fitting Linear Quantile Regression Mixed Models
-Version: 1.2.0
+Version: 1.2.1
 Author: Sayyed Reza Alavian[aut,cre]
         Majid Sarmad[ths]
         Mehdi Jabbari Nooghabi[ths]
@@ -20,6 +20,6 @@ Imports: GeneticsPed, SparseM, quantreg, Matrix, kinship2, MCMCglmm,
         sparsesvd, corpcor
 Suggests: MASS
 NeedsCompilation: no
-Packaged: 2020-01-07 12:36:38 UTC; REZA
+Packaged: 2020-02-22 08:40:37 UTC; REZA
 Repository: CRAN
-Date/Publication: 2020-01-07 22:40:06 UTC
+Date/Publication: 2020-02-22 09:10:02 UTC
