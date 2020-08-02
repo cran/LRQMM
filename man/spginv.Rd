@@ -22,7 +22,7 @@ a inverse generalized sparse matrix
 }
 \references{
 [1]Alavian, S. R. (2019). Creating LRQMM package for predicting the breeding value of animals
-by corrected mixed quantile regression (Unpublished master's thesis). Ferdowsi University Of Mashhad. Mashhad. Iran.[Persion].
+by corrected mixed quantile regression (Unpublished master's thesis). Ferdowsi University Of Mashhad. Mashhad. Iran.[Persian].
 }
 \author{Sayyed Reza Alavian }
 

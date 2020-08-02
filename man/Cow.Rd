@@ -1,17 +1,18 @@
 \name{Cow}
 \alias{Cow}
 \docType{data}
-\title{breastfeeding period data of Iranian Holstein cows}
-\description{ Cow data include 30 cows with id records, father's record, mother' record, number of Herd and breastfeeding period length.}
+\title{Herd life Data of Iranian Holstein Cows}
+\description{ Cow data include 100 cows with id records, father's record, mother' record, number of HYS, age of first calving and Herd life.}
 \usage{data("Cow")}
 \format{
-  A data frame with 30 observations on the following 5 variables.
+  A data frame with 100 observations on the following 6 variables.
   \describe{
-    \item{\code{id}}{ The number form animal record as vector or column matrix}
-    \item{\code{sire}}{The number form father's animal record as vector or column matrix}
-    \item{\code{dam}}{The number form mother's animal record as vector or column matrix}
-    \item{\code{HERD}}{a number of record's Herd}
-    \item{\code{LACTLENGHT}}{a numeric vector of breastfeeding period length }
+    \item{\code{REGNO}}{ The number form animal record as vector or column matrix}
+    \item{\code{FREG}}{The number form father's animal record as vector or column matrix}
+    \item{\code{MREG}}{The number form mother's animal record as vector or column matrix}
+    \item{\code{HYS}}{a numeric vector levels of Herd, Year, Season}
+    \item{\code{AGECAL}}{a numeric vector of age of first calving}
+    \item{\code{HL}}{a numeric vector of Herd Life }
   }
 }
 

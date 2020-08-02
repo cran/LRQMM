@@ -1,4 +1,4 @@
-lrqmm<-function(id,sire,dam,X,Y,cova=NULL,alpha=0,tau=0.5,Factor=FALSE){
+lrqmm_m<-function(id,sire,dam,X,Y,cova=NULL,alpha=0,tau=0.5,Factor=FALSE,maxTries=3000,interval=30){
   start.time <- Sys.time()
   data<-data.frame(id,sire,dam,X,Y) #preparation data befor using Pedigree function
   Ped<-GeneticsPed::Pedigree(x=data,subject="id",ascendant=c("sire","dam"))
@@ -22,7 +22,7 @@ lrqmm<-function(id,sire,dam,X,Y,cova=NULL,alpha=0,tau=0.5,Factor=FALSE){
   random<-Z+((Z.t.inv%*%Ainv)*alpha);dimZ2<-dim(Z)[2]
   E<-cbind(X,random)
   if(!is.null(cova)){cova<-Matrix::Matrix(cova,sparse=TRUE);E<-cbind(E,cova)};E<-as.matrix(E)
-  SVD<-rsvd::rsvd(E)
+  SVD<-SVDmat(E,maxTries,interval)
   model<-quantreg::rq.fit(SparseM::as.matrix.csr(SVD$u),Y,method="sfn",tau=tau)
   coef<-model$coef;coef<-SVD$v%*%(solve(diag(SVD$d))%*%as.matrix(coef))
   coef<-STDE(coef,Y=Y,E=E,SVD=SVD,tau = tau,n = n)
@@ -40,3 +40,4 @@ lrqmm<-function(id,sire,dam,X,Y,cova=NULL,alpha=0,tau=0.5,Factor=FALSE){
   if(!is.null(cova)){ans<-list(fix.effect=fix.effect.d,cova.effect=cova.effect,random.effect=random.effect.d,residuals=resi,Time_between_start_to_end=end.time-start.time)}
   append(ans,ans$summary<-c("estimated effects in quantile:"=tau, "MAE:"=MAE, "Var(response):"=stats::var(Y), "Var(pedigree's random.effect):"=stats::var(random.effect), "Var(record's random.effect):"=stats::var(random.effect[(m-n+1):m]) ,"observaions:"=n,"pedigree's length:"=m, "fix.effect.lavel:"=dim(X)[2],"random.effect.lavel:"=dimZ2))
   return(sapply(ans,round,4))}
+
