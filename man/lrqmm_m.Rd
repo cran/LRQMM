@@ -9,20 +9,19 @@ Fit a quantile regression mixed model involved Relationship Matrix using a spars
   Frisch-Newton interior-point algorithm.
 }
 \usage{
-lrqmm_m(id, sire, dam, X, Y,cova=NULL , alpha = 0 , tau = 0.5 , Factor = FALSE
-, maxTries = 3000, interval = 30)
+lrqmm_m(id, sire, dam, X, Y,cova=NULL , alpha = 0 , tau = 0.5 , maxTries = 3000
+        , interval = 30)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{id}{ The number form animal record as column matrix}
   \item{sire}{The number form father's animal record as column matrix}
   \item{dam}{The number form mother's animal record as column matrix}
-  \item{X}{fixed effect(s) as column matrix}
+  \item{X}{fixed effect(s) as column matrix that will change to factor variable in this function}
   \item{Y}{a response column matrix}
   \item{cova}{{covariate effect(s) column matrix}}
   \item{alpha}{a parameter for raite error's varince to variance of random effects, dependent on statistical model (Animal model, Sire model, etc.)  }
   \item{tau}{desired quantile}
-  \item{Factor}{type of fixed effect that "TRUE" as factor variable and "FALSE" as quantitative variable}
   \item{maxTries}{The maximum number of times the connection is check for an answer from the MATLAB server before giving up. Default values is 3000 times.}
   \item{interval}{The interval in seconds between each poll for an answer.  Default interval is 30 (second).}
 }
@@ -45,7 +44,8 @@ other packages are available in CRAN.
 \item{Random effects}{estimate for random effect(s) from linear quantile regression mixed model with its standard error}
 \item{residuals}{estimate for model residuals from linear quantile regression mixed model}
 \item{Time_between_start_to_end}{execution time of linear quantile regression mixed model}
-\item{summary}{reporting quantile for  effects estimation,  mean absolute error for fitted model,  variance of response variable, variance of pedigree's random.effect, variance of record's random.effect, number of observations, pedigree's length, fix effect lavels and random effect lavels}
+\item{MAE}{mean absolute error for fitted model}
+\item{summary}{reporting quantile for  effects estimation,  variance of response variable, variance of pedigree's random.effect, variance of record's random.effect, number of observations, pedigree's length, fix effect lavels and random effect lavels}
 }
 \references{
 [1]Alavian, S. R. (2019). Creating LRQMM package for predicting the breeding value of animals
@@ -71,8 +71,8 @@ When this function stops abnormally (due an error or warning in MATLAB), you sho
 #before running this code, be sure for Matlab installation in your system.
 #
 # >data(Cow)
-# >with(lrqmm_m(id=REGNO,sire=FREG,dam=MREG,X=HYS,Y=HL,cova=AGECAL,alpha=1,tau=0.5,
-#  Factor=TRUE),data=Cow)
+# >with(lrqmm_m(id=REGNO,sire=FREG,dam=MREG,X=HYS,Y=HL,cova=AGECAL,alpha=1,tau=0.5)
+#  ,data=Cow)
 #
 #
 #End(not run)

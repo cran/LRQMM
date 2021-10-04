@@ -9,20 +9,19 @@ Fit a quantile regression mixed model involved Relationship Matrix using a spars
   Frisch-Newton interior-point algorithm.
 }
 \usage{
-lrqmm(id, sire, dam, X, Y,cova=NULL , alpha = 0 , tau = 0.5 , Factor = FALSE)
+lrqmm(id, sire, dam, X, Y,cova=NULL , alpha = 0 , tau = 0.5)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
   \item{id}{ The number form animal record as column matrix}
   \item{sire}{The number form father's animal record as column matrix}
   \item{dam}{The number form mother's animal record as column matrix}
-  \item{X}{fixed effect(s) as column matrix}
+  \item{X}{fixed effect(s) as column matrix that will change to factor variable in this function}
   \item{Y}{a response column matrix}
   \item{cova}{{covariate effect(s) column matrix}}
   \item{alpha}{a parameter for raite error's varince to variance of random effects dependent on statistical model (Animal model, Sire model, etc.)  }
   \item{tau}{desired quantile}
-  \item{Factor}{type of fixed effect that "TRUE" as factor variable and "FALSE" as quantitative variable}
-}
+  }
 \details{
 The function computes an estimate on the tau-th quantile effects of the linear mixed model. This is a sparse implementation of the Frisch-Newton algorithm for quantile regression described in Portnoy and Koenker (1997).
 
@@ -42,7 +41,8 @@ other packages are available in CRAN.
 \item{Random effects}{estimate for random effect(s) from linear quantile regression mixed model with its standard error}
 \item{residuals}{estimate for model residuals from linear quantile regression mixed model}
 \item{Time_between_start_to_end}{execution time of linear quantile regression mixed model}
-\item{summary}{reporting quantile for  effects estimation,  mean absolute error for fitted model,  variance of response variable, variance of pedigree's random.effect, variance of record's random.effect, number of observations, pedigree's length, fix effect lavels and random effect lavels}
+\item{MAE}{mean absolute error for fitted model}
+\item{summary}{reporting quantile for  effects estimation, variance of response variable, variance of pedigree's random.effect, variance of record's random.effect, number of observations, pedigree's length, fix effect lavels and random effect lavels}
 }
 \references{
 [1]Alavian, S. R. (2019). Creating LRQMM package for predicting the breeding value of animals
@@ -66,7 +66,7 @@ CABI International. ISBN: 9781780643915.
 
 
 data(Cow)
-with(lrqmm(id=REGNO,sire=FREG,dam=MREG,X=HYS,Y=HL,cova=AGECAL,alpha=1,tau=0.5,Factor=TRUE)
+with(lrqmm(id=REGNO,sire=FREG,dam=MREG,X=HYS,Y=HL,cova=AGECAL,alpha=1,tau=0.5)
 ,data=Cow)
 
 
